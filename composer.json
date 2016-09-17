@@ -1,0 +1,24 @@
+{
+    "name": "xdrew/oauth2-odnoklassniki",
+    "description": "Odnoklassniki provider for league/oauth2-client",
+    "keywords": [
+        "league",
+        "package"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrei Velent",
+            "email": "ve-lent@tut.by"
+        }
+    ],
+    "require": {
+        "php" : ">=5.5",
+        "league/oauth2-client": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "xdrew\\OAuth2\\Client\\Provider\\": "src"
+        }
+    }
+}
