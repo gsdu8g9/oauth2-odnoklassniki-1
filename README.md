@@ -16,6 +16,7 @@ $provider = new xdrew\OAuth2\Client\Provider\Odnoklassniki([
     'clientPublic' => 'CBAPKGGLEBACACACA',
     'clientSecret' => 's0meRe4lLySEcRetC0De',
     'redirectUri'  => 'https://example.org/oauth-endpoint',
-    'scopes'       => ['GET_EMAIL'], // You should request access to this scope from ok.ru support to get user email
+    'scopes'       => ['GET_EMAIL'], // OPTIONAL You should request access to this scope from ok.ru support to get user email
+    'userFields'   => [''], // OPTIONAL 
 ]);
 ```
