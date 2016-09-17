@@ -5,7 +5,7 @@ This package provides [Odnoklassniki](https://ok.ru) integration for [OAuth2 Cli
 ## Installation
 
 ```sh
-composer require xdrew/oauth2-vkontakte
+composer require xdrew/oauth2-odnoklassniki
 ```
 
 ## Configuration
