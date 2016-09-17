@@ -118,13 +118,13 @@ class Odnoklassniki extends AbstractProvider
     {
         $signed_params = [
             'application_key' => $this->clientPublic,
+            'fields' => implode(',', $this->userFields),
             'method' => 'users.getCurrentUser',
-            'fields' => $this->userFields,
         ];
 
-        $signature = md5(str_replace('&', '', $this->buildQueryString($signed_params)) . md5($token->getTokent() . $this->clientSecret));
+        $signature = md5(str_replace('&', '', urldecode($this->buildQueryString($signed_params))) . md5($token->getToken() . $this->clientSecret));
 
-        $params = $signed_params + ['sig' => $signature, 'access_token' => $token->getToken()];
+        $params = array_merge($signed_params, ['sig' => $signature, 'access_token' => $token->getToken()]);
         $query = $this->buildQueryString($params);
         $url = "$this->baseUri/fb.do?$query";
 
@@ -168,6 +168,6 @@ class Odnoklassniki extends AbstractProvider
 
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        return new User($response['response']);
+        return new User($response);
     }
 }

@@ -5,7 +5,7 @@ namespace xdrew\OAuth2\Client\Provider;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 /**
- * @see     https://vk.com/dev/fields
+ * @see     https://apiok.ru/wiki/display/api/fields+ru
  *
  * @package xdrew\OAuth2\Client\Provider
  */
@@ -53,14 +53,23 @@ class User implements ResourceOwnerInterface
     }
 
     /**
-     * @return string|null DD.MM.YYYY
+     * @return string|null
      */
     public function getBirthday()
     {
         return $this->getField('birthday');
     }
+
     /**
-     * @return array [id =>, title => string]
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->getField('email');
+    }
+
+    /**
+     * @return array
      */
     public function getLocation()
     {
@@ -81,7 +90,7 @@ class User implements ResourceOwnerInterface
         return $this->getField('last_name');
     }
     /**
-     * @return int 1|2 => woman|man
+     * @return int
      */
     public function getGender()
     {
