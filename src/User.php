@@ -47,7 +47,7 @@ class User implements ResourceOwnerInterface
      *
      * @return mixed|null
      */
-    protected function getField($key)
+    public function getField($key)
     {
         return !empty($this->response[$key]) ? $this->response[$key] : null;
     }
